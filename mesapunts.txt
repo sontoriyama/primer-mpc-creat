@@ -3,6 +3,9 @@ mirarem la versio llarga del k vai veure a youtube pero a twitch
 🤖 CURSO de MCP (Model Context Protocol) desde CERO con TypeScript. ¡El futuro de la programación y la IA! | !discord !ts !midu - Twitch
 mcp.so
 Servidores MCP
+
+el k ja he fet del github oficial de modelcontextprotocol el filesystem control escritura i lectura arxius pc, el possgres locals o tb externs ja fa les consultes sql adecuades i si s'ekivoca la refa fins encertar
+dbengine
 Outerbase
 GitHub - externalbase/studio: Una interfaz gráfica de usuario (GUI) ligera para bases de datos en tu navegador. Admite la conexión a Postgres, MySQL y SQLite.
 github.com/settings/personal-access-tokens/new
@@ -29,7 +32,7 @@ github.com/openai/codex
 01:17:_00 comencem projecte propi server mcp
 diu k tb es pot fer amb javascript
 
-pero utilitzem el sdk oficial de modelcontextprotocol
+pero utilitzem el sdk oficial de modelcontextprotocol typescript i fer type="module" i "main": "main.ts",
 
 
 npm install @modelcontextprotocol/sdk
