@@ -1,3 +1,63 @@
+agafar els apunts de sanfe mes complets amb bases de datos dbengin i outerbase de cloudflare amb ia local. avui en pendrem pocs
+mirarem la versio llarga del k vai veure a youtube pero a twitch
+🤖 CURSO de MCP (Model Context Protocol) desde CERO con TypeScript. ¡El futuro de la programación y la IA! | !discord !ts !midu - Twitch
+mcp.so
+Servidores MCP
+Outerbase
+GitHub - externalbase/studio: Una interfaz gráfica de usuario (GUI) ligera para bases de datos en tu navegador. Admite la conexión a Postgres, MySQL y SQLite.
+github.com/settings/personal-access-tokens/new
+millor fine. el clasic es acces a tot sense control (no té mlt sentit)
+ja ha fet outside i dbengine pels possgres locals
+minut 47:18 de twitch
+
+C UN MCP QUE MIRI LA ULTIMA VERSIO DE CADA FRAMEWORK O BIBLIOTECA O MILLOR DIT PAQUET DE NPM LA VERSIÓ! PK NO S'EKIVOKI COM LI PASA A MIDU AL FER PULL REQUEST K CLAUDE LI ALUCINA I CANVIA A ASTRO 5.8 K NO EXISTEIX
+
+1:13:00 twitch et pots beneificiar de la multimodalidad desde la terminal codi obert 1milio invertit, incrementen 25mil dolars per millorar la api 
+npm i -g @openai/codex
+o
+he trobat
+pnpm add @openai/codex
+
+codex
+
+codex -m o4-mini
+
+el cloude code
+github.com/openai/codex
+
+
+01:17:_00 comencem projecte propi server mcp
+diu k tb es pot fer amb javascript
+
+pero utilitzem el sdk oficial de modelcontextprotocol
+
+
+npm install @modelcontextprotocol/sdk
+
+pero com fa midu, amb pnpm es add
+
+creem carpeta server
+pnpm init
+	pel package.json
+
+type="module"
+i "main": "main.ts",
+
+!!!
+
+
+
+pnpm add @modelcontextprotocol/sdk
+
+i tb necessitarem per validar la entrada del usuario... zod validar entrades i sortides, validar eskemes de datos
+
+pnpm add zod
+
+C:\ACCESS-IA-MPC\servers-propis\primer-mpc-creat>
+
+carets fora
+
+
 //importem les dependencies lo primer de tot mpc xD
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
@@ -47,3 +107,6 @@ await server.connect(transport);
 
 //per executar amb typescript al vol sense previa compilacio amb el nou node farem npx tsx -y main.ts i es quedara funcionant bé quedant-se com amb el cursor escoltant pero no cal que aixekem el server amb els mpc, sino que ja el cridara el client amb el npx del json
 // node main.js i tsx main.ts pero podem fer npx tsx -y main.ts i es quedara funcionant bé quedant-se com amb el cursor escoltant i no se li aturara a la ia fent preguntes gracies al -y
+
+
+//antic apunt per executar amb typescript al vol sense compilacio amb el nou node farem npx tsx -y main.ts i es quedara funcionant bé quedant-se com amb el cursor escoltant pero no cal que aixekem el server amb els mpc, sino que ja el cridara el client amb el npx del json
