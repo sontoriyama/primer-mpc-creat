@@ -4,7 +4,7 @@ mirarem la versio llarga del k vai veure a youtube pero a twitch
 mcp.so
 Servidores MCP
 
-el k ja he fet del github oficial de modelcontextprotocol el filesystem control escritura i lectura arxius pc, el possgres locals o tb externs ja fa les consultes sql adecuades i si s'ekivoca la refa fins encertar
+el k ja he fet del github oficial de modelcontextprotocol el filesystem control escritura i lectura arxius pc, el postgres locals o tb externs ja fa les consultes sql adecuades i si s'ekivoca la refa fins encertar, i tb fem el de github que segons els permisos podras fer pull request, issues o el k configures al acess token de github pasantho com un parametre env al json dels clients per cridar als servers
 dbengine
 Outerbase
 GitHub - externalbase/studio: Una interfaz gráfica de usuario (GUI) ligera para bases de datos en tu navegador. Admite la conexión a Postgres, MySQL y SQLite.
@@ -58,7 +58,25 @@ pnpm add zod
 
 C:\ACCESS-IA-MPC\servers-propis\primer-mpc-creat>
 
-carets fora
+carets^^ fora
+
+en ves d'anar al client claude desktop, winsurf, cursor o algun que fem manualment amb see o anythingllm etc, podem fer servir per fer proves, testear i depurar servers de mcp com deia ai anytime i midu inspector mpc
+//npx -y @modelcontextprotocol/inspector command ?arg ?arg
+//millor com diu midu npx -y @modelcontextprotocol/inspector npx -y tsx main.ts (un cop /inspector la millor forma d'executar el nostre server a inspector es amb el npx -y tsx) i si, dos cops -y xD no posem tota la ruta pk estem a la mateixa carpeta
+
+de lo que ve els json dels clients com claude desktop farem
+
+
+/dins de l'objecte de mpcservers, tindrem diferents servers i en aquest el cridarem per weather pq al codi l'hem definit com server.tool name weather de fet fetch-weather pero crec que ho acabara canviant, pel que em sona dai anytime
+{
+    "name": "weather",
+    "command": "npx",
+    "args": [
+        "-y",
+        "tsx",
+        "/Users/goku/ACCESS-IA-MPC/servers-propis/primer-mpc-creat/main.ts"
+    ]
+}
 
 
 //importem les dependencies lo primer de tot mpc xD
@@ -113,3 +131,153 @@ await server.connect(transport);
 
 
 //antic apunt per executar amb typescript al vol sense compilacio amb el nou node farem npx tsx -y main.ts i es quedara funcionant bé quedant-se com amb el cursor escoltant pero no cal que aixekem el server amb els mpc, sino que ja el cridara el client amb el npx del json
+agafar els apunts de sanfe mes complets amb bases de datos dbengin i outerbase de cloudflare amb ia local. avui en pendrem pocs
+mirarem la versio llarga del k vai veure a youtube pero a twitch
+🤖 CURSO de MCP (Model Context Protocol) desde CERO con TypeScript. ¡El futuro de la programación y la IA! | !discord !ts !midu - Twitch
+mcp.so
+Servidores MCP
+
+el k ja he fet del github oficial de modelcontextprotocol el filesystem control escritura i lectura arxius pc, el postgres locals o tb externs ja fa les consultes sql adecuades i si s'ekivoca la refa fins encertar, i tb fem el de github que segons els permisos podras fer pull request, issues o el k configures al acess token de github pasantho com un parametre env al json dels clients per cridar als servers
+dbengine
+Outerbase
+GitHub - externalbase/studio: Una interfaz gráfica de usuario (GUI) ligera para bases de datos en tu navegador. Admite la conexión a Postgres, MySQL y SQLite.
+github.com/settings/personal-access-tokens/new
+millor fine. el clasic es acces a tot sense control (no té mlt sentit)
+ja ha fet outside i dbengine pels possgres locals
+minut 47:18 de twitch
+
+C UN MCP QUE MIRI LA ULTIMA VERSIO DE CADA FRAMEWORK O BIBLIOTECA O MILLOR DIT PAQUET DE NPM LA VERSIÓ! PK NO S'EKIVOKI COM LI PASA A MIDU AL FER PULL REQUEST K CLAUDE LI ALUCINA I CANVIA A ASTRO 5.8 K NO EXISTEIX
+
+1:13:00 twitch et pots beneificiar de la multimodalidad desde la terminal codi obert 1milio invertit, incrementen 25mil dolars per millorar la api 
+npm i -g @openai/codex
+o
+he trobat
+pnpm add @openai/codex
+
+codex
+
+codex -m o4-mini
+
+el cloude code
+github.com/openai/codex
+
+
+01:17:_00 comencem projecte propi server mcp
+diu k tb es pot fer amb javascript
+
+pero utilitzem el sdk oficial de modelcontextprotocol typescript i fer type="module" i "main": "main.ts",
+
+
+npm install @modelcontextprotocol/sdk
+
+pero com fa midu, amb pnpm es add
+
+creem carpeta server
+pnpm init
+	pel package.json
+
+type="module"
+i "main": "main.ts",
+
+!!!
+
+
+
+pnpm add @modelcontextprotocol/sdk
+
+i tb necessitarem per validar la entrada del usuario... zod validar entrades i sortides, validar eskemes de datos
+
+pnpm add zod
+
+C:\ACCESS-IA-MPC\servers-propis\primer-mpc-creat>
+
+carets^^ fora
+
+en ves d'anar al client claude desktop, winsurf, cursor o algun que fem manualment amb see o anythingllm etc, podem fer servir per fer proves, testear i depurar servers de mcp com deia ai anytime i midu inspector mpc
+//npx -y @modelcontextprotocol/inspector command ?arg ?arg
+//millor com diu midu npx -y @modelcontextprotocol/inspector npx -y tsx main.ts (un cop /inspector la millor forma d'executar el nostre server a inspector es amb el npx -y tsx) i si, dos cops -y xD no posem tota la ruta pk estem a la mateixa carpeta
+aqui si que ens diu obrir un localhost al navegador on veiem el see pero en aquest el select farem stdio entrada i salida standard :)
+de lo que ve els json dels clients com claude desktop farem
+
+
+/dins de l'objecte de mpcservers, tindrem diferents servers i en aquest el cridarem per weather pq al codi l'hem definit com server.tool name weather de fet fetch-weather pero crec que ho acabara canviant, pel que em sona dai anytime
+{
+    "name": "weather",
+    "command": "npx",
+    "args": [
+        "-y",
+        "tsx",
+        "/Users/goku/ACCESS-IA-MPC/servers-propis/primer-mpc-creat/main.ts"
+    ]
+}
+
+
+//importem les dependencies lo primer de tot mpc xD
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
+import { z } from 'zod';
+
+// 1.Crear el servidor
+// Es la interfaz principal ccon el protocolo MCP. Maneja la comunicación entre el cliente y el servidor
+//const server = new McpServer({ port: 3002 })
+
+const server = new McpServer({
+    name: 'Demo',
+    version: '1.0.0', //aquestes dos són les minimes pero amb autoomplit o control space o documentacioo podem veure k podem pasar molt més
+});
+
+//eines és el més interesant tot i que mpc poden dur prompts, recursos i altres coses
+
+
+// 2. Definir  esquema diu l'autocomplete pero midu tenim
+// 2. Definir las herramientas, tools lo més tipic, de lectura, escritura, que tingui algun tipus d'estat, o que depengui d'algo extern, calcul, proccés, etc
+//si fem server.tool avans d'escriure tool veiem que tenim (a part de connect, server i close), lo de prompt que poden fer-te preguntes, ser reutilitzables i resources (solo de lectura per si vols retornar la configuracio o algo en concret) i tools que es lo més tipic etc Hem de dir el nom i la descripció com a mínim
+server.tool(
+    'fetch-weather', //nom de la tool o titul de la tool
+    'Tool to fetch the weather of a city', //descripció de la tool
+//i ara quins parametres necessita l'objecte per funcionar o sigui que li pasarem un objecte que té una ciutat, etc  pero fixa't que no hem de fer res, la ia sabrà on esta la ciutat sense que fem res
+	{
+        citty: z.string().describe('City name'), //poddriem descriure o no. MÉS OPCIONAL PERÒ CONTRA MÉS CONTEXT, MÉS PODRA LAIA ENTENDRE K VOLEM QUE FACI
+        //country: z.string().describe('Country name'),
+    },
+    async ({ city }) => {
+        //finalment tenim el callback per recuperar la entrada del usuario i fer lo que volguem que faci. Lo més sencill seria retornar un objecte amb un array dins amb lo que fem amb la informació
+        return {
+            content: [
+                {
+                    type: 'text',
+                    value: `El clima en ${city} es soleado` //DSP HO COMPLIQUEM
+                }
+            ]
+        }
+    }
+);
+
+//3. Escoltar les conexions a aquest servidor per part del client
+const transport = new StdioServerTransport();
+//ARA MATEIX EL TRANSPORT ES StdioServerTransport que es l'standard de entrada i sortida pq l'utilitzem en local i no a internet. que transporti pel nostre pc la nostra maquina
+//i el servidor es  conectarà a aquest transport de datos
+await server.connect(transport);
+
+//per executar amb typescript al vol sense previa compilacio amb el nou node farem npx tsx -y main.ts i es quedara funcionant bé quedant-se com amb el cursor escoltant pero no cal que aixekem el server amb els mpc, sino que ja el cridara el client amb el npx del json
+// node main.js i tsx main.ts pero podem fer npx tsx -y main.ts i es quedara funcionant bé quedant-se com amb el cursor escoltant i no se li aturara a la ia fent preguntes gracies al -y
+
+
+//antic apunt per executar amb typescript al vol sense compilacio amb el nou node farem npx tsx -y main.ts i es quedara funcionant bé quedant-se com amb el cursor escoltant pero no cal que aixekem el server amb els mpc, sino que ja el cridara el client amb el npx del json
+
+
+//open-mateo no cal registrar-te per no accepta pasarli el nom duna ciutat, pero te una api disponible de geolocalitzacio on li paseses el nom ciutat et dona latitud i longitud de la ciutat (des de la ui) i et dona una urlapi que copiem de bcn i ja fem el await fetching de datos acabo dema clase o deixo descriure apunts pk els tinc a sanfe i tic boig de tornar a putnar tot. pero la kuestio es que al nom url cambien barcelona per ${city} i ja agafa sentit amb els parametres de lusuari el mpc la ia i api del temps tot cuallant :)
+//a copilot preguntar? no, trar agente k sha dactivar a vscode a f1 configuracio usuario activar agente
+//i jatenim a copilot martell tools pk vscode recupera mcps de claude, cursor, windsurf, etc
+//kuan apretem a les noves eines que detecta tal server filesystem desde claude o el weather sense claude, midu recomana desactivarles si no les hem dusar i nomes usar la k o les k provem i convinem al moment
+//es pot fer des de lf1 agregar servidor amb un input... po a lo cutre o sino anant a settings a sota de tot el json hi ha mcp: { servers { hi posem tot lo del weather}
+//per afegir-ho cursor es mes facil
+//pero al posar-ho al json del settings ja veiem que ho detecta i podem clicar dins el json botonet iniciar o reiniciar si fem canvis
+//recomana molt el mcp de playwright
+//tb es pot insertar mcp server per linia de comandos code --add-mcp '{"name":"weather","command":"npx","args":["-y","tsx","/Users/goku/ACCESS-IA-MPC/servers-propis/primer-mpc-creat/main.ts"]}'
+//fa scraping, entra a les webs i extreu informacio, li podem dir que navegui a una web que et dongui el h1 i et digui els ultims videos de react de la web del midu per exemle
+//li diu entra a la velada i revisa que els sponsors que apareixen son els mateixos que tenen al projecte sponsors.ts i ho enten i diu que son els mateixos i en el mateix orden i k a la web hi ha info extra comparant les dues, imaginat k falta grefusa i sen adonara i tavisara o li diem que l'afageixi amb la info que pugui extraure de la pagina
+
+//augmentem les posiblitats del que volem, inicia sesio aki, o ves al localhost i noseke, ha extret informacio, ha afegit grefusa que lha tret, i ha actualitzat, extret info i actualitzat info
+//hem vist tremendo introduccio a mpc, com usarlos, com crearlos, com fer api, fer a vscode per ser mes productiu amb mpc, podem fer coses genial!
+//obviament els datos del mcp gasten tokens pk li pases info i dema fa charla de codex
