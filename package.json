@@ -1,0 +1,17 @@
+{
+  "name": "primer-mpc-creat",
+  "version": "1.0.0",
+  "description": "mpc para llms",
+  "type": "module",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "zod": "^3.24.3"
+  }
+}
